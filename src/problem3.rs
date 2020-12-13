@@ -6,12 +6,30 @@ pub fn part_one() {
         .lines()
         .map(|line| line.chars().collect())
         .collect();
+    let movement = (3, 1);
+    println!("Result: {}", go_down_slope(&unit_rows, movement));
+}
 
+pub fn part_two() {
+    let unit_rows: Vec<Vec<char>> = fs::read_to_string("inputs/3_part1.txt")
+        .expect("Something went wrong reading the file")
+        .lines()
+        .map(|line| line.chars().collect())
+        .collect();
+
+        let slope_a = go_down_slope(&unit_rows, (1, 1));
+        let slope_b = go_down_slope(&unit_rows, (3, 1));
+        let slope_c = go_down_slope(&unit_rows, (5, 1));
+        let slope_d = go_down_slope(&unit_rows, (7, 1));
+        let slope_e = go_down_slope(&unit_rows, (1, 2));
+        println!("Result: {}", slope_a * slope_b * slope_c * slope_d * slope_e);
+}
+
+fn go_down_slope(unit_rows: &Vec<Vec<char>>, movement: (usize, usize)) -> usize {
     //we need to repeat unit_columns into our map
     let mut map: Vec<Vec<char>> = unit_rows.iter().map(|line| line.clone()).collect();
 
     let mut location = (0, 0);
-    let movement = (3, 1);
     let mut trees_encountered = 0;
 
     //keep going until we reach the bottom
@@ -37,5 +55,5 @@ pub fn part_one() {
         location.1 = location.1 + movement.1;
     }
 
-    println!("Total trees: {}", trees_encountered)
+    return trees_encountered;
 }

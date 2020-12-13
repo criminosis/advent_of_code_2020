@@ -3,5 +3,5 @@ mod problem1;
 mod problem3;
 
 fn main() {
-    problem3::part_one();
+    problem3::part_two();
 }

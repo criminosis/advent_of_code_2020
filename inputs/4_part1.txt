@@ -32,9 +32,7 @@ eyr:2029 iyr:2019
 
 eyr:2023 ecl:amb iyr:2020 byr:1927 pid:242570886 hcl:#18171d hgt:192cm
 
-iyr:1990 cid:295 hgt:131 pid:187cm byr:2014
-ecl:xry hcl:z
-eyr:1928
+
 
 ecl:hzl
 byr:1953

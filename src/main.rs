@@ -9,5 +9,5 @@ mod problem6;
 mod utils;
 
 fn main() {
-    problem6::part_one();
+    problem6::part_two();
 }
